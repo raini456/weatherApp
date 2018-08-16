@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>jQuery Mobile page</title>
+        <title>Weather App</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/themes/mycolors.css" />
@@ -25,18 +25,18 @@
             <div data-role="content"> 
                 <div data-role="panel" id="sideNav" data-display="overlay"><!-- oder auch push oder reveal-->
                     <div data-role="controlgroup" id="select_tmp" data-type="horizontal">                
-                        <a href="#" class="ui-btn ui-corner-all selectBtnTmp" data-tmp="fahrenheit" data-rel="close">Fahrenheit</a>
-                        <a href="#" class="ui-btn ui-corner-all selectBtnTmp" data-tmp="metric" data-rel="close">Celsius</a>                
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnTmp" data-tmp="fahrenheit" data-rel="close">Fahrenheit</a>
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnTmp" data-tmp="metric" data-rel="close">Celsius</a>                
                     </div>
                     
                     <div data-role="controlgroup" id="select_country" data-type="horizontal">                
-                        <a href="#" class="ui-btn ui-corner-all selectBtnCountry" data-rel="close" data-lang="de"><img src="assets/images/german.png" width="40" height="40" alt="german flag"/></a>
-                        <a href="#" class="ui-btn ui-corner-all selectBtnCountry" data-rel="close" data-lang="en"><img src="assets/images/english.png" width="40" height="40" alt="english flag"/></a>
-                        <a href="#" class="ui-btn ui-corner-all selectBtnCountry" data-rel="close" data-lang="fr"><img src="assets/images/french.png" width="40" height="40" alt="french flag"/></a>                                        
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnCountry" data-rel="close" data-lang="de"><img src="assets/images/german.png" width="40" height="40" alt="german flag"/></a>
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnCountry" data-rel="close" data-lang="en"><img src="assets/images/english.png" width="40" height="40" alt="english flag"/></a>
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnCountry" data-rel="close" data-lang="fr"><img src="assets/images/french.png" width="40" height="40" alt="french flag"/></a>                                        
                     </div>
-                    <a href="#" class="ui-btn" data-rel="close">CLOSE</a>                
+                    <a href="#" class="ui-btn ui-btn-b" data-rel="close">CLOSE</a>                
                 </div>                
-                <a href="#sideNav" class="ui-btn ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
+                <a href="#sideNav" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
                 <div class="ui-field-contain">    
                     <select data-native-menu="false" id="select_city" data-iconpos="left">
                         <option value="">Bitte Stadt wählen</option>        
@@ -72,7 +72,7 @@
                 <div class="ui-grid-d" id="forecastTmp"></div>
                 <div class="ui-grid-d" id="forecastIcon"></div>
                 <div data-role="footer" data-position="fixed">
-                    <p>&copy; Stefan Landvogt 2018</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&copy; Stefan Landvogt 2018</p>
                 </div>
 
             </div>

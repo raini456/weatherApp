@@ -1,5 +1,6 @@
 $(document).on("pagecreate", "#page_home",function(){
     var $content = $('#content_weather');
+    var unit ="C";
     var $description = $('#content_description');
     var $place = $('#content_place');
     var $pressure = $('#content_pressure');
@@ -9,7 +10,7 @@ $(document).on("pagecreate", "#page_home",function(){
     var $forecastTmp = $('#forecastTmp'); 
     var $forecastIcon = $('#forecastIcon'); 
     var $forecastHour = $('#forecastHour'); 
-    $content.html("It works");
+    $content.html("uno momento prego!");
     
     var opts={
         q:'Tokyo',
@@ -40,8 +41,15 @@ $(document).on("pagecreate", "#page_home",function(){
         $place.html("");
         $description.html("");
         $pressure.html("");
-        opts.units = $(this).attr('data-tmp');          
-        $.getJSON(getApiUrl(opts), viewData);
+        opts.units = $(this).attr('data-tmp');   
+        if(opts.units==="fahrenheit"){
+            unit="F";
+        }
+        else{
+            unit="C";
+        }
+        $.getJSON(getApiUrl(opts),viewData);
+        $.getJSON(getForecastUrl(opts), viewForecastData);
     }
     function changeLang(){
         $place.html("");
@@ -52,7 +60,8 @@ $(document).on("pagecreate", "#page_home",function(){
     }
     //bei einer klaren Datenlieferung per JSON kann man nehmen
         
-    function viewData(data){          
+    function viewData(data){ 
+        
         var icon = data.weather[0].icon;
         var iconUrl = 'https://api.openweathermap.org/img/w/'+ icon + '.png';
         var picUrl = 'assets/images/'+data.name+'.jpg';
@@ -62,9 +71,9 @@ $(document).on("pagecreate", "#page_home",function(){
             width:'120px',
             height:'150px'
         }).appendTo($place);          
-        $('<h3>').text('Temperatur: ' + parseInt(data.main.temp) + '°').appendTo($content);
-        $('<h4>').text('Höchsttemperatur: ' + data.main.temp_max + '°').appendTo($content);
-        $('<h4>').text('Tiefsttemperatur: ' + data.main.temp_min + '°').appendTo($content);        
+        $('<h3>').text('Temperatur: ' + parseInt(data.main.temp) + '° ' + unit).appendTo($content);
+        $('<h4>').text('Höchsttemperatur: ' + parseInt(data.main.temp_max) + '° ' + unit).appendTo($content);
+        $('<h4>').text('Tiefsttemperatur: ' + parseInt(data.main.temp_min) + '° ' + unit).appendTo($content);        
         $('<img>').attr('src', iconUrl).appendTo($content); 
         $('<h3>').text('Nähere Information: \n').appendTo($description);
         $('<h4>').text(data.weather[0].description).css({
@@ -93,11 +102,10 @@ $(document).on("pagecreate", "#page_home",function(){
             var block1 = $('<div class="ui-block-'+chars[i]+'">');              
             block1.text("~ "+(i+1)*3+" h:").appendTo($forecastHour);
             var block2 = $('<div class="ui-block-'+chars[i]+'">');              
-            block2.html("\n<strong>" + tmp + " °</strong>\n").appendTo($forecastTmp);
+            block2.html("\n<strong>" + parseInt(tmp) + " ° " + unit +"</strong>\n").appendTo($forecastTmp);
             var block3 = $('<div class="ui-block-'+chars[i]+'">');              
             $('<img>').attr('src', iconUrl).appendTo(block3); 
-            block3.appendTo($forecastIcon);
-            //$('<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">').img(forecastIcon).appendTo($forecastIcon);
+            block3.appendTo($forecastIcon);            
         }
     }
     function getApiUrl(args){
