@@ -1,0 +1,13 @@
+#content_place img{
+   border:2px solid gray;
+   box-shadow: 0 0 10px green;
+}
+hr{
+    color:green;
+}
+.selectBtn{
+    background-color:lightgray;
+}
+.ui-bar{
+    height:60px;
+}
