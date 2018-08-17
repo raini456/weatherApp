@@ -25,10 +25,10 @@
             <div data-role="content"> 
                 <div data-role="panel" id="sideNav" data-display="overlay"><!-- oder auch push oder reveal-->
                     <div data-role="controlgroup" id="select_tmp" data-type="horizontal">                
-                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnTmp" data-tmp="fahrenheit" data-rel="close">Fahrenheit</a>
+                        <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnTmp" data-tmp="imperial" data-rel="close">Fahrenheit</a>
                         <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnTmp" data-tmp="metric" data-rel="close">Celsius</a>                
                     </div>
-                    
+
                     <div data-role="controlgroup" id="select_country" data-type="horizontal">                
                         <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnCountry" data-rel="close" data-lang="de"><img src="assets/images/german.png" width="40" height="40" alt="german flag"/></a>
                         <a href="#" class="ui-btn ui-btn-d ui-corner-all selectBtnCountry" data-rel="close" data-lang="en"><img src="assets/images/english.png" width="40" height="40" alt="english flag"/></a>
@@ -39,7 +39,7 @@
                 <a href="#sideNav" id="settings" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
                 <div class="ui-field-contain">    
                     <select data-native-menu="false" id="select_city" data-iconpos="left">
-                        <option value="" id="chooseOpt">Bitte Stadt wählen</option>        
+                        <option value="" id="chooseOpt">City-Selection</option>        
                         <option value="Bangkok">Bangkok</option>
                         <option value="Berlin, de">Berlin</option>
                         <option value="London">London</option>
@@ -74,8 +74,6 @@
                 <div data-role="footer" data-position="fixed">
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&copy; Stefan Landvogt 2018</p>
                 </div>
-
             </div>
-
     </body>
 </html>
