@@ -20,7 +20,7 @@
 
         <div data-role="page" id="page_home">
             <div data-role="header" data-position="fixed">
-                <h1>Das Wetter</h1>
+                <h1 id="headline">Das Wetter</h1>
             </div>
             <div data-role="content"> 
                 <div data-role="panel" id="sideNav" data-display="overlay"><!-- oder auch push oder reveal-->
@@ -36,10 +36,10 @@
                     </div>
                     <a href="#" class="ui-btn ui-btn-b" data-rel="close">CLOSE</a>                
                 </div>                
-                <a href="#sideNav" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
+                <a href="#sideNav" id="settings" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
                 <div class="ui-field-contain">    
                     <select data-native-menu="false" id="select_city" data-iconpos="left">
-                        <option value="">Bitte Stadt wählen</option>        
+                        <option value="" id="chooseOpt">Bitte Stadt wählen</option>        
                         <option value="Bangkok">Bangkok</option>
                         <option value="Berlin, de">Berlin</option>
                         <option value="London">London</option>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <hr>
-                <h3>Vorschau</h3>
+                <div id="forecastH3"></div>
                 <div class="ui-grid-d" id="forecastHour"></div>
                 <div class="ui-grid-d" id="forecastTmp"></div>
                 <div class="ui-grid-d" id="forecastIcon"></div>
