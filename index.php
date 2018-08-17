@@ -39,7 +39,7 @@
                 <a href="#sideNav" id="settings" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-icon-gear">EINSTELLUNGEN</a>
                 <div class="ui-field-contain">    
                     <select data-native-menu="false" id="select_city" data-iconpos="left">
-                        <option value="" id="chooseOpt">City-Selection</option>        
+                        <option value="" id="chooseOpt">Bitte Stadt wählen</option>        
                         <option value="Bangkok">Bangkok</option>
                         <option value="Berlin, de">Berlin</option>
                         <option value="London">London</option>

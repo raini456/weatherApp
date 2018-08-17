@@ -7,6 +7,7 @@ $(document).on("pagecreate", "#page_home", function () {
     var $selectCity = $('#select_city');
     var $selectTmp = $('.selectBtnTmp');
     var $selectCountry = $('.selectBtnCountry');
+    var $chooseOpt = $('#chooseOpt');
     var $forecastH3 = $('#forecastH3');
     var $forecastTmp = $('#forecastTmp');
     var $forecastIcon = $('#forecastIcon');
@@ -156,6 +157,8 @@ $(document).on("pagecreate", "#page_home", function () {
         }
         $settings.text(link);
         $headline.text(title);
+        $chooseOpt.text(select);
+        $selectCity.selectmenu('refresh');
         $.getJSON(getApiUrl(opts), viewData);
     }
 
